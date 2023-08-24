@@ -1,0 +1,38 @@
+body{
+    position: relative;
+    background-color: #8f9e86;
+}
+.list-body{
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #E8EBE6;
+    margin-left: 25%;
+    margin-right: 25%;
+    border-radius: 10%;
+}
+
+
+.list-body > ol > li{
+    font-size: 30px;
+    color: #2a3026;
+    font-family: 'Brush Script MT', cursive;
+    height: 30px;
+    width: 300px;
+    border-bottom: 2px solid black;
+    height: fit-content;
+}
+
+footer {
+    
+    
+    position: fixed; 
+    bottom: 5px; 
+    width: 100%; 
+    border-radius: 10px;
+   
+}
+input{
+    border: 0;
+}

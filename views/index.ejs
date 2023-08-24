@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note Pad</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+    <header ></header>
+    <h1 style="text-align: center;">Note Pad</h1>
+    <div class = "list-body" style="text-align: center;">
+        <ol>
+            <% if(locals.note){ %>
+                    <% for (let index = 0; index < note.length; index++) {%>
+                
+                        <li><%=note[index].name%></li>
+                
+                    <% } %>
+             <% } %>
+            <li> 
+                <form action="/submit" method="POST">
+                    <input type="text" name="addedNote" placeholder="Add Note or type 'delete' to delete latest">
+                    <input type="submit" value="OK">
+                </form>
+            </li>
+        </ol>
+    </div>
+
+    <footer>created by David <%= new Date().getFullYear(); %></footer>
+</body>
+</html>
