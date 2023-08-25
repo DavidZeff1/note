@@ -6,12 +6,25 @@ var newNote =[];
 var array =[];
 var arraySize = 0;
 const mongoose = require('mongoose');
-const port = process.env.Port || 3000;
- 
+const port = process.env.PORT || 3000;
+ mongoose.set('strictQuery',false);
 //Connection to MongoDB database
 //⁡⁢⁣⁣This line will specify the port where we will access our MongoDB Server
 //⁡⁢⁣⁣Here "fruitsDB" is the name of the database where we want to connect to.⁡
-mongoose.connect("mongodb+srv://admin-david:Test123@cluster0.qgp7rgu.mongodb.net/notesdb");
+const connectDB = async () =>{
+
+  try {
+    const conn = await mongoose.connect(process.env.MONGO_URI);
+    console.log(`mongo connected: ${conn.connection.host}`);
+  } catch (error) {
+    console.log(error);
+    process.exit(1);
+    
+  }
+
+} 
+
+
 const  notesSchema = {
     name: String,
 }
